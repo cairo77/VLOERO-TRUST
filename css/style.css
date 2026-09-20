@@ -106,3 +106,24 @@ img{max-width:100%;display:block}
 .viewer-heading{margin-top:44px;margin-bottom:16px}
 .viewer-heading h3{margin:7px 0 0;color:#0f233a}
 @media(max-width:800px){.document-options{grid-template-columns:1fr}.document-actions .btn{width:100%;text-align:center}}
+/* 1. استهداف العنصر الأول (الهاتف المكتب) وتوسيطه */
+.contact-grid .contact-item:first-child {
+    grid-column: 1 / -1;    /* يجعله يمتد بعرض الشبكة بالكامل ليصبح وحيداً في الأعلى */
+    justify-self: center;   /* يضعه في المنتصف تماماً */
+    width: 100%;            /* يضمن توزيع المساحة */
+    max-width: 400px;       /* يمكنك تغيير هذا الرقم للتحكم في عرض المربع */
+    text-align: center;     /* لتوسيط النصوص والروابط داخل المربع */
+}
+
+/* 2. لتوسيط النصوص والروابط بشكل صحيح داخل المربع */
+.contact-grid .contact-item:first-child a,
+.contact-grid .contact-item:first-child strong {
+    display: block;         /* يجعل النص والروابط تحت بعضها وفي المنتصف */
+    margin-bottom: 5px;
+}
+
+/* 3. إلغاء تأثير وسم <br> الموجود في الـ HTML حتى لا يترك فراغاً مشوهاً */
+.contact-grid br {
+    display: none;
+}
+
